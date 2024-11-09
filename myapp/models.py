@@ -9,9 +9,9 @@ class Real_estate_property(models.Model):
         ('land', 'Land'),
     ]
 
-    address = models.CharField(max_length=255)
-    price = models.DecimalField(max_digits=10, decimal_places=2)
-    property_type = models.CharField(max_length=50, choices=PROPERTY_TYPES)
+    address = models.CharField(max_length=100)
+    price = models.IntegerField(max_digits=10)
+    property_type = models.CharField(max_length=50)
     number_of_bedrooms = models.PositiveIntegerField()
     square_footage = models.PositiveIntegerField()
     location = models.CharField(max_length=100)
