@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Property Listings</h1>
+<form method="get">
+    <input type="text" name="location" placeholder="Location">
+    <input type="number" name="min_price" placeholder="Min Price">
+    <input type="number" name="max_price" placeholder="Max Price">
+    <button type="submit">Filter</button>
+</form>
+
+<a href="{% url 'create_property' %}">Add New Property</a>
+<ul>
+    {% for property in properties %}
+        <li>
+            <a href="{% url 'property_detail' property.pk %}">{{ property.address }}</a>
+            - {{ property.price }} USD
+            - {{ property.property_type }}
+        </li>
+    {% endfor %}
+</ul>
+</body>
+</html>

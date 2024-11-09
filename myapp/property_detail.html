@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{ property.address }}</h1>
+<p>Price: {{ property.price }} USD</p>
+<p>Type: {{ property.property_type }}</p>
+<p>Bedrooms: {{ property.number_of_bedrooms }}</p>
+<p>Square Footage: {{ property.square_footage }} sq. ft.</p>
+<p>Location: {{ property.location }}</p>
+<img src="{{ property.property_image.url }}" alt="{{ property.address }}">
+<p>Contact: {{ property.contact_details }}</p>
+
+<a href="{% url 'edit_property' property.pk %}">Edit</a> |
+<a href="{% url 'delete_property' property.pk %}">Delete</a>
+</body>
+</html>
